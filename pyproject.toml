@@ -1,0 +1,31 @@
+[project]
+name = "stone-chat"
+version = "0.1.0"
+description = "Ollama Chat GUI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.12.4",
+    "ollama>=0.6.0", 
+    "streamlit>=1.51.0"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9.0.1",]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # Pyflakes
+    "I", # isort
+    "UP", # pyupgrade
+]
+
+ignore = [
+    "E501", # line-too-long
+]
